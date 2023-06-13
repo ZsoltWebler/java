@@ -1,9 +1,18 @@
 package org.example;
 
+import org.example.burger.*;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello world!");
+        PremiumBurger burger = new PremiumBurger();
+
+
+
+        System.out.println(burger.getPrice());
+
+
+
     }
 }
