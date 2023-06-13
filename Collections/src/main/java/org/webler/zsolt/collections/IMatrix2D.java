@@ -13,7 +13,7 @@ public interface IMatrix2D<T extends Number> {
 
     IMatrix2D<T> add(IMatrix2D<T> matrix);
     IMatrix2D<T> subtract(IMatrix2D<T> matrix);
-    IMatrix2D<T> multiplyByScalar(IMatrix2D<T> matrix);
+    IMatrix2D<T> multiplyByScalar(int scalar);
 
     IMatrix2D<T> transpose(IMatrix2D<T> matrix);
 
