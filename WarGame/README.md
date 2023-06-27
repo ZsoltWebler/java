@@ -33,3 +33,27 @@ Halál esetén:
 `[Hadseregnév][Harcosnév] elhullott a csatában [Hadseregnév][Harcosnév] keze által`
 
 A _main()_ metódusba hozz létre két hadsereget 10-10 harcossal és nézd meg különböző kiválasztási stratégiákkal ki nyer.
+
+## Kiegészítés:
+
+Egészítsd ki az elkészült alkalmazást a következőképpen:
+
+- Készíts egy **WarriorGenerator** osztályt, ami harcosok létrehozására szolgál. Az osztály konstruktorba kapja azt az
+  intervallumot, amin belül a támadási érték és az életerő értéket vehet fel. Készíts két .csv fáljt vezeteknev.csv és
+  keresztnev.csv néven és vegyél fel 10-10 sort mindkét fáljba. Az osztály töltse be a vezetékneveket és a
+  keresztneveket 1-1 megfelelő adatszerkezetbe majd ezekből építse fel a harcosok nevét. A **WarriorGenerator** osztály
+  valósítson meg egy getWarriors(int numbersOfWarriors) metódust, ami egy harcos listával tér vissza. Oldd meg, hogy a
+  listán belül két harcos ne kapja ugyan azt a nevet. (Ne foglalkozz azzal az esettel, ha több harcost kellene
+  generálni, mint amennyi név lehetséges).
+
+- Készíts egy **ArmyManager** osztályt, aminek két statikus metódusa van:
+    - saveArmy(Army army, String fileName): Ami egy Army objektumot JSON formátumba a megadott fájlba írja.
+    - loadArmy(String fileName): Ami egy JSON fájlből betölt egy Army objektumot.
+
+- Készíts egy **Logger** osztályt, amit felhasználva a korábban a konzolra írt üzeneteket egy logfile.txt-be írod a
+  konzol helyett. A korábbi üzenet formátumot egészítsd ki egy [TimeStamp] taggal, ami a másodperc pontos dátumot
+  tartalmazza és az üzenet elején van.
+
+- A main metódusba mutasd be az új osztályok használatát
+
+A megoldás során bármilyen segítséget használhatsz!
