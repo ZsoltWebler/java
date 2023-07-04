@@ -1,10 +1,11 @@
 package org.example.solution;
 
+import java.io.IOException;
 import java.util.Random;
 
 public class War {
 
-    public void battle(Army firstArmy, Army secondArmy) {
+    public void battle(Army firstArmy, Army secondArmy) throws IOException {
 
         Warrior firstArmyWarrior = firstArmy.getWarrior();
         Warrior secondArmyWarrior = secondArmy.getWarrior();
@@ -23,11 +24,11 @@ public class War {
 
         String winner = firstArmyWarrior == null ? secondArmy.getName() : firstArmy.getName();
 
-        System.out.println("A győztes " + winner);
+        Logger.log("A győztes " + winner);
 
     }
 
-    private Warrior fight(Warrior firstArmyWarrior, Warrior secondArmyWarrior) {
+    private Warrior fight(Warrior firstArmyWarrior, Warrior secondArmyWarrior) throws IOException {
 
         boolean firstWarriorIsAlive = true;
         boolean secondWarriorIsAlive = true;
@@ -54,7 +55,7 @@ public class War {
 
     }
 
-    private boolean doDamage(Warrior attackWarrior, Warrior defendWarrior) {
+    private boolean doDamage(Warrior attackWarrior, Warrior defendWarrior) throws IOException {
 
         defendWarrior.setHealth(defendWarrior.getHealth() - attackWarrior.getAttackValue());
 
@@ -66,11 +67,11 @@ public class War {
 
 
 
-            System.out.println(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
+            Logger.log(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
                     + damage +" sebzést okozott neki és " + defendWarrior.getHealth() +
                     " életereje maradt.");
         } else {
-            System.out.println(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
+            Logger.log(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
                     + damage + " sebzést okozott neki és meghalt");
         }
 

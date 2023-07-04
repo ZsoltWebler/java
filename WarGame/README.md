@@ -57,3 +57,18 @@ Egészítsd ki az elkészült alkalmazást a következőképpen:
 - A main metódusba mutasd be az új osztályok használatát
 
 A megoldás során bármilyen segítséget használhatsz!
+
+## Felhasználói felület:
+
+Készíts az alkalmazáshoz felhasználói felületet, ami az alábbi funkciókat tudja.
+
+- Képes megjeleníteni a két hadsereg nevét és a bennük lévő harcosok listáját.
+  - Ha egy harcos elesik, kerüljön ki a listából.
+
+- Képes megjeleníteni a harcok szöveges leírását.
+
+- A háború végeztével egy előugró ablakban jelzi, melyik hadsereg győzőtt.
+
+Példa: 
+
+![](img.png)

@@ -1,5 +1,7 @@
 package org.example.solution;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Objects;
 
 public class Warrior {
@@ -7,8 +9,11 @@ public class Warrior {
     private String name;
     private int health;
     private int attackValue;
+    @JsonIgnore
     private Army army;
 
+
+    public Warrior(){}
     public Warrior(String name, int health, int attackValue) {
         this.name = name;
         this.health = health;

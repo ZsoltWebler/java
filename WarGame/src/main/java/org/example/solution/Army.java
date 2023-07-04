@@ -1,5 +1,7 @@
 package org.example.solution;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -9,6 +11,9 @@ public class Army {
     private String name;
     private List<Warrior> warriors;
 
+    public Army(){
+
+    }
 
     public Army(String name, List<Warrior> warriors, WarriorSelectionStrategy selectionStrategy) {
         this.name = name;
@@ -35,6 +40,11 @@ public class Army {
         return name;
     }
 
+    public List<Warrior> getWarriors() {
+        return warriors;
+    }
+
+    @JsonIgnore
     public Warrior getWarrior() {
 
         if (warriors.size() > 0) {
