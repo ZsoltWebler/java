@@ -11,6 +11,9 @@ public class Main {
 
         WarriorGenerator warriorGenerator = new WarriorGenerator(1, 100, 1, 100);
 
+        warriorGenerator.getWarriors(10).forEach(warrior -> System.out.print("\""+warrior.getName()+"\""+", "));
+
+
         Army army = new Army("TestArmy", warriorGenerator.getWarriors(10), WarriorSelectionStrategy.TOUGHEST_FIRST);
         Army army_2 = new Army("TestArmy_2", warriorGenerator.getWarriors(10), WarriorSelectionStrategy.TOUGHEST_FIRST);
 

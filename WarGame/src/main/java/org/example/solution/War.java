@@ -5,7 +5,13 @@ import java.util.Random;
 
 public class War {
 
+    private WarGameFrame frame;
+
+
     public void battle(Army firstArmy, Army secondArmy) throws IOException {
+
+        this.frame = new WarGameFrame(firstArmy, secondArmy);
+        frame.setVisible(true);
 
         Warrior firstArmyWarrior = firstArmy.getWarrior();
         Warrior secondArmyWarrior = secondArmy.getWarrior();
@@ -20,11 +26,13 @@ public class War {
                 firstArmyWarrior = firstArmy.getWarrior();
             }
 
+            frame.refreshArmy();
         }
 
         String winner = firstArmyWarrior == null ? secondArmy.getName() : firstArmy.getName();
 
-        Logger.log("A győztes " + winner);
+        frame.log("A győztes " + winner);
+        frame.showWinnerPopup(winner);
 
     }
 
@@ -66,12 +74,11 @@ public class War {
         if (isSurvived) {
 
 
-
-            Logger.log(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
-                    + damage +" sebzést okozott neki és " + defendWarrior.getHealth() +
+            frame.log(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
+                    + damage + " sebzést okozott neki és " + defendWarrior.getHealth() +
                     " életereje maradt.");
         } else {
-            Logger.log(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
+            frame.log(attackwarriorName + " megtámadta " + deffendWarriorName + "-t és "
                     + damage + " sebzést okozott neki és meghalt");
         }
 
