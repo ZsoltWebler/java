@@ -1,0 +1,78 @@
+# Junior Java Backend fejlesztő tanfolyam
+
+## Feladatsor 1
+
+### 1. Feladat - Java programozási nyelv alapjai:
+
+Szoftverfejlesztés során több különböző módon hívhatjuk a változóinkat. Több konvenció is kialakulásra került az évek
+alatt. Ezekkel a koncenciókkal fogunk dolgozni.
+
+- snake_case - A szavak egymást követik `_` karakterrel elválasztva. Vagy nagybetűs vagy kisbetűs minden szó.
+- camelCase - Minden új megkezdett szó nagybetűval kapcsolódik az előző szóhoz.
+- PascalCase - Nagyon hasonló a camelCase-hez, annyi különbséggel, hogy az első szó is nagybetűvel indul.
+- kebab-case - A szavak egymást követik `-` karakterrel elválasztva.
+
+A feladatotok a `NamingConventionConverter` osztályba található, metódusok megvalósítása és az elkészültek kijavítása,
+amíg a `/tests` package-ben lévő tesztesetek sikeresen le nem futnak.
+
+### 2. Feladat - Java objektumorientált programozás:
+
+Adott egy az `orders.txt` melyben pizza rendeléseket tárolunk. A fájl blokkokra van osztva, egy
+blokk egy napot jelöl, és minden ilyen blokk egy dátummal kezdődik. Ezután egy rendelés adatai két sorban találhatók. Az
+első sor a futár azonosítója, a második sorban irányítószám, utcanév, házszám és a szállítás pontos ideje található.
+
+```
+2020.12.01
+FUT_1
+1113 Petőfi 12 12:30
+FUT_2
+1114 Kossuth 9 11:20
+FUT_2
+1211 Jókai 10 19:30
+FUT_3
+1191 Kossuth 9 18:12
+FUT_1
+1144 Tököly 11 16:33
+2020.12.02
+FUT_1
+1123 Ady 12 12:30
+....
+```
+
+Old meg az alábbi feladatok az OOP alapelvek segítségével és használj osztályt, ahol tudsz.
+
+- Melyik napon volt a legkevesebb rendelés?
+- Egy metódus várjon paraméterül egy dátumot, pontos időponttal és adjuk vissza a hozzá tartozó rendelést. Ha nincs
+  ilyen akkor dobjunk kivételt.
+- Készíts statisztikát a futárok szállításiból, futáronként add vissza, hogy mennyi rendelést teljesítettek.
+- Melyik címre szállították a legtöbb pizzát?
+
+Készíts teszt esetet minden metódusodhoz!
+
+### 3. Feladat - Java kollekciók:
+
+Adott egy vetélkedő kérdésbankja a `kerdesek.txt` fájlban. A fájlban az egy kérdéshez tartozó adatok
+két sorban helyezkednek el. Első sorban a kérdés, a második sorban a válasz a pontszám és a téma, szóközzel
+elválasztava. Olvasd be a fájl tartalmát a memóriába, majd oldjátok meg a lenti feladatokat.
+
+```
+Mikor volt a mohacsi vesz?
+1526 1 tortenelem
+Melyik evben bomlott fel a Nyugat-Romai Birodalom?
+476 1 tortenelem
+Melyik a legkisebb primszam?
+2 1 matematika
+Mennyi 64 kobgyoke?
+4 2 matematika
+...
+```
+
+- Írj egy metódust, melynek paramétere a téma és add vissza, az összes kérdést abban a témában. (Csak a kérdéseket)
+- Írj egy metódust, ami random sorsol ki n darab kérdést, és adja vissza annak összes adatát. (Nem lehetnek egyezőek)
+- Készíts egy metódust ami rendszerezi a kérdéseket témakörönként. Visszatér egy adatszerkezetben amelyben témánként
+  megtalálható az összes kérdés, összes adata.
+- Az előző feladat segítségével határozd meg, hogy melyik téma kérdései érik a legtöbb pontot (összpontszám)!
+
+Készíts teszt esetet minden metódusodhoz!
+
+Próbáld meg a feladatot az OOP alapelvek segítségével megvalósítani és használj osztályt, ahol tudsz.
