@@ -107,3 +107,64 @@ Feladatok:
   induló járatról van szó.
 
 Készíts teszt esetet minden metódushoz!
+
+## Feladat 5 - Java adatbázis:
+
+A feladatod egy félkész Film adatbázis befejezése. Futtasd az alábbi **SQL** utasítást, hogy létrehozd a megfelelő
+táblákat és beszúrd az adatokat.
+
+```sql
+CREATE TABLE IF NOT EXISTS movie_category
+(
+    movie_category_id
+    serial
+    PRIMARY
+    KEY,
+    movie_category_name
+    VARCHAR
+(
+    50
+) UNIQUE NOT NULL
+    );
+
+CREATE TABLE IF NOT EXISTS movie
+(
+    movie_id
+    serial
+    PRIMARY
+    KEY,
+    movie_name
+    VARCHAR
+(
+    50
+) UNIQUE NOT NULL,
+    movie_imdb_score REAL NOT NULL,
+    movie_category_id INT NOT NULL,
+    FOREIGN KEY
+(
+    movie_category_id
+)
+    REFERENCES movie_category
+(
+    movie_category_id
+)
+    );
+
+INSERT INTO movie_category(movie_category_name)
+VALUES ('Horror'),
+       ('Akció'),
+       ('Vígjáték'),
+       ('Thriller');
+INSERT INTO movie(movie_name, movie_imdb_score, movie_category_id)
+VALUES ('Oppenheimer', 8.8, 4),
+       ('Barbie', 7.5, 3),
+       ('Flash', 7.0, 2),
+       ('Madarak', 5.4, 1);
+```
+
+A feladatod, befejezni az alkalmazást.
+ - Javítsd ki a hibás teszt eseteket
+ - Az `Imdb` osztály tartalmaz egy grafikus felületet, de jelenleg egyik gomb se műdködik.
+   - A meglévő implementáció alapján az `ImdbController` osztályban írd meg a hiányzó metódusokat.
+   - Készíts egy grafikus felületet, az új film létrehozására. Az `addNewMovie` gomb megnyomására, jöjjön elő egy dialógus,
+ amiben meg tudod adni a film adatait és a megfelelő metódus felhasználásával szúrd be azt az adatbázisba.
