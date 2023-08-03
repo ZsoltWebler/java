@@ -1,6 +1,7 @@
 package test_exam_1.java_database.view;
 
 import test_exam_1.java_database.controller.ImdbController;
+import test_exam_1.java_database.model.MovieDao;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -10,9 +11,10 @@ import java.awt.event.ActionListener;
 public class Imdb extends JFrame {
 
     private JPanel contentPane;
-
+    private final ImdbController controller;
 
     public Imdb(ImdbController controller) {
+        this.controller = controller;
         this.setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
@@ -40,11 +42,16 @@ public class Imdb extends JFrame {
         JButton movieAddButton = new JButton("Add new movie");
         movieAddButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //TODO
-                controller.addMovie(null);
+                AddMovieDialog addMovieDialog = new AddMovieDialog(Imdb.this);
+                addMovieDialog.setVisible(true);
             }
         });
         contentPane.add(movieAddButton);
+    }
+
+    protected void addMovie(MovieDao movieDao) {
+        controller.addMovie(movieDao);
+
     }
 
 }

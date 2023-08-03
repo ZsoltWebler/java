@@ -114,52 +114,27 @@ A feladatod egy félkész Film adatbázis befejezése. Futtasd az alábbi **SQL*
 táblákat és beszúrd az adatokat.
 
 ```sql
-CREATE TABLE IF NOT EXISTS movie_category
-(
-    movie_category_id
-    serial
-    PRIMARY
-    KEY,
-    movie_category_name
-    VARCHAR
-(
-    50
-) UNIQUE NOT NULL
+CREATE TABLE IF NOT EXISTS movie_category (
+                                              movie_category_id serial PRIMARY KEY,
+                                              movie_category_name VARCHAR ( 50 ) UNIQUE NOT NULL
     );
 
-CREATE TABLE IF NOT EXISTS movie
-(
-    movie_id
-    serial
-    PRIMARY
-    KEY,
-    movie_name
-    VARCHAR
-(
-    50
-) UNIQUE NOT NULL,
+CREATE TABLE IF NOT EXISTS movie (
+                                     movie_id serial PRIMARY KEY,
+                                     movie_name VARCHAR ( 50 ) UNIQUE NOT NULL,
     movie_imdb_score REAL NOT NULL,
     movie_category_id INT NOT NULL,
-    FOREIGN KEY
-(
-    movie_category_id
-)
-    REFERENCES movie_category
-(
-    movie_category_id
-)
+    FOREIGN KEY (movie_category_id)
+    REFERENCES movie_category (movie_category_id)
     );
 
-INSERT INTO movie_category(movie_category_name)
-VALUES ('Horror'),
-       ('Akció'),
-       ('Vígjáték'),
-       ('Thriller');
-INSERT INTO movie(movie_name, movie_imdb_score, movie_category_id)
-VALUES ('Oppenheimer', 8.8, 4),
-       ('Barbie', 7.5, 3),
-       ('Flash', 7.0, 2),
-       ('Madarak', 5.4, 1);
+INSERT INTO movie_category(movie_category_name) VALUES ('Horror'),('Akció'),('Vígjáték'),('Thriller');
+INSERT INTO movie(movie_name,movie_imdb_score,movie_category_id) VALUES
+                                                                     ('Oppenheimer',8.8,4),
+                                                                     ('Barbie',7.5,3),
+                                                                     ('Flash',7.0,2),
+                                                                     ('Madarak',5.4,1);
+
 ```
 
 A feladatod, befejezni az alkalmazást.
